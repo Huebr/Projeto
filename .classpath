@@ -13,5 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Pedro/Downloads/slf4j-1.7.25/slf4j-1.7.25/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
