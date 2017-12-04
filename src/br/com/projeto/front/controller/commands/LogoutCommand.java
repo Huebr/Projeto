@@ -15,6 +15,6 @@ public class LogoutCommand extends FrontCommand {
               session.removeAttribute("username");
               session.removeAttribute("order");
           });
-        response.sendRedirect("/Projeto/?command=Home");
+        response.sendRedirect("/?command=Home");
     }
 }

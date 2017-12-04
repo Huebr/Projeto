@@ -6,7 +6,7 @@
         <title>Bookshelf: Home</title>
     </head>
     <body>
-        <form action="/Projeto/?command=Search" method="POST">
+        <form action="/?command=Search" method="POST">
             <input type="text" id="search" name="q">
             <input type="submit" value="Go!">
         </form>

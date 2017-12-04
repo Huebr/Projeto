@@ -22,7 +22,7 @@
         <p>
             <b>Total: <%= request.getAttribute("total") %></b>
         </p>
-        <form action="/Projeto/?command=Checkout" method="POST">
+        <form action="/?command=Checkout" method="POST">
             <input type="submit" value="Donate :)">
         </form>
     </body>

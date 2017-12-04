@@ -29,7 +29,7 @@ public class OrderCommand extends FrontCommand {
             Livro book = bookshelf.get(isbn);
             order.add(book, quantity);
             session.setAttribute("order", order);
-            response.sendRedirect(String.format("/Projeto/?command=Show&isbn=%s", isbn));
+            response.sendRedirect(String.format("/?command=Show&isbn=%s", isbn));
         }
     }
 }

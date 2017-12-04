@@ -13,7 +13,7 @@ public class CheckoutCommand extends FrontCommand {
         HttpSession session = request.getSession(false);
         if (request.getMethod().equals("POST")) {
             session.removeAttribute("order");
-            response.sendRedirect("/Projeto/?command=Home&message=Thank you for buying!");
+            response.sendRedirect("/?command=Home&message=Thank you for buying!");
         } else {
             Order order = (Order) session.getAttribute("order");
             Double total = order.getItems().entrySet().stream()

@@ -10,7 +10,7 @@
             <% } else { %>
                 <%= (order.getItems().size()) %> items.
             <% } %>
-            <a href="/Projeto/?command=Checkout">Checkout</a>
+            <a href="/?command=Checkout">Checkout</a>
         </p>
     <% } %>
 <% } %>
