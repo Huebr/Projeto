@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>Bookshelf: Titulo encontrado</title>
+        <%@ include file="partials/head.jsp" %>
     </head>
     <body>
         <p>Our Bookshelf contains following titles:</p>
@@ -18,7 +19,8 @@
                 <a href="/?command=Home">Go back...</a>
             </form>
         <% } %>
-        <%@ include file="shopping-cart-hint.jsp"%>
-        <%@ include file="visitor-counter.jsp"%>
+        <%@ include file="partials/shopping-cart-hint.jsp"%>
+        <%@ include file="partials/visitor-counter.jsp"%>
+        <%@ include file="partials/scripts.jsp" %>
     </body>
 </html>

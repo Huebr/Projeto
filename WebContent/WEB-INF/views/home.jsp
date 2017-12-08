@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>Bookshelf: Home</title>
+        <%@ include file="partials/head.jsp" %>
     </head>
     <body>
         <form action="/?command=Search" method="POST">
@@ -19,9 +20,11 @@
             <hr/>
             <p><b><%= book.getAuthor() %>:</b></p>
             <h3><%= book.getTitle() %></h3>
-            <a href="/Projeto/?command=Show&isbn=<%= book.getIsbn() %>">More...</a>
+            <a href="?command=Show&isbn=<%= book.getIsbn() %>">More...</a>
         <% } %>
-        <%@ include file="shopping-cart-hint.jsp"%>
-        <%@ include file="visitor-counter.jsp"%>
+        
+        <%@ include file="partials/shopping-cart-hint.jsp"%>
+        <%@ include file="partials/visitor-counter.jsp"%>
+        <%@ include file="partials/scripts.jsp" %>
     </body>
 </html>

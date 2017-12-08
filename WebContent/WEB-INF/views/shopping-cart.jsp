@@ -5,6 +5,7 @@
 <html>
     <head>
         <title>Bookshelf: Checkout</title>
+        <%@ include file="partials/head.jsp" %>
     </head>
     <body>
         <p>You are about to buy the following books:</p>
@@ -25,5 +26,7 @@
         <form action="/?command=Checkout" method="POST">
             <input type="submit" value="Donate :)">
         </form>
+        
+        <%@ include file="partials/scripts.jsp" %>
     </body>
 </html>

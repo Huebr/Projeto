@@ -15,8 +15,8 @@ public class LoginCommand extends FrontCommand {
         } else {
             String queryString = Optional.ofNullable(request.getQueryString())
               .orElse("command=Home");
-            request.setAttribute("redirect", request.getRequestURL()
-              .append("?").append(queryString).toString());
+//            request.setAttribute("redirect", request.getRequestURL().append("?").append(queryString).toString());
+            request.setAttribute("redirect", request.getRequestURL().append("?").append("command=Home").toString());
             forward("login");
         }
     }

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.projeto.front.controller.commands.FrontCommand;
-import br.com.projeto.front.controller.commands.LoginCommand;
+import br.com.projeto.front.controller.commands.HomeCommand;
 
 import java.io.IOException;
 
@@ -29,7 +29,7 @@ public class AuthenticationFilter implements Filter {
 		HttpSession session = httpServletRequest.getSession(false);
 		if (session == null || session.getAttribute("username") == null) {
 			callback.intercept();
-			FrontCommand command = new LoginCommand();
+			FrontCommand command = new HomeCommand();
 			command.init(httpServletRequest, httpServletResponse);
 			command.process();
 		} else {

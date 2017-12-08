@@ -50,8 +50,7 @@ public class frontControllerServlet extends HttpServlet {
 
 	private FrontCommand getCommand(HttpServletRequest request) {
 		try {
-			Class type = Class.forName(String.format("br.com.projeto.front.controller.commands.%sCommand",
-					request.getParameter("command")));
+			Class type = Class.forName(String.format("br.com.projeto.front.controller.commands.%sCommand", request.getParameter("command")));
 			return (FrontCommand) type.asSubclass(FrontCommand.class).newInstance();
 		} catch (Exception e) {
 			return new UnknownCommand();
