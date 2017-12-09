@@ -9,7 +9,7 @@ import java.io.IOException;
 public class testeCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        super.process();
+        //super.process();
 //        EstanteDeLivros bookshelf = (EstanteDeLivros) request.getServletContext().getAttribute("bookshelf");
 //        request.setAttribute("books", bookshelf);
 //        forward("home");
