@@ -44,17 +44,18 @@
 					</div>
 					<div class="col-md-1">
 						<form action="/?command=Checkout" method="POST">
-							<input type="submit" class="btn btn-success btn-sm" value="Comprar">
+							<input type="submit" class="btn btn-success btn" value="Comprar">
 						</form>
 					</div>
 					<div class="col-md-1">
 						<form action="/?command=Home" method="POST">
-							<input type="submit" class="btn btn-primary btn-sm" value="Voltar">
+							<input type="submit" class="btn btn-primary btn" value="Voltar">
 						</form>
 					</div>
 				</div>
 			</div>
-
+			<%@ include file="partials/visitor-counter.jsp"%>
+			<%@ include file="partials/footer.jsp"%>
 		</div>
 	    
 	    

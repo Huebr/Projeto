@@ -1,3 +1,4 @@
+
 package br.com.projeto.dao;
 
 import java.net.URISyntaxException;
@@ -13,3 +14,4 @@ public class ConfigUtils {
 		conn.close();
 	}
 }
+

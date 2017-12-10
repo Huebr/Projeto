@@ -17,22 +17,25 @@
 	<br>
 	<br>
 	
-	<div class="container">
-	    <main role="main">
-		    <div class="row">
-				<div class="jumbotron">
-					<h1 class="display-3"><p>Our Bookshelf doesn't contains this title:</p></h1>
-					<h2><%= request.getParameter("q") %></h2>
-					<br>
+	<main role="main">
+		<div class="container">
+			<%@ include file="partials/shopping-cart-hint.jsp"%>
+			 <div class="col-md-3"></div>
+				<div class="card col-md-6">
+					<div class="card-body">
+						<p class="card-title">
+							<b>Nenhum livro encontrado</b>
+						</p>
+					</div>
 				</div>
-		    </div>
-		</main>
+			<br>
+	        <%@ include file="partials/visitor-counter.jsp"%>
+		</div>
+	</main>
 		
-        <%@ include file="partials/shopping-cart-hint.jsp"%>
-        <%@ include file="partials/visitor-counter.jsp"%>
 	</div> 
                
-        <%@ include file="partials/scripts.jsp" %>
+	   <%@ include file="partials/scripts.jsp" %>
     </body>
     
     

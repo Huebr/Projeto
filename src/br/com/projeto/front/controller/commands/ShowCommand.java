@@ -17,6 +17,6 @@ public class ShowCommand extends FrontCommand {
         String title = request.getParameter("isbn");
         Livro book = bookshelf.get(title);
         request.setAttribute("books", Collections.singletonList(book));
-        forward("book-found");
+        forward("book-info");
     }
 }
