@@ -3,30 +3,64 @@
 <%@ page import="java.util.Map" %>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Bookshelf: Checkout</title>
-        <%@ include file="partials/head.jsp" %>
-    </head>
-    <body>
-        <p>You are about to buy the following books:</p>
-        <h2>Shopping Cart</h2>
-        <% Order order = (Order) session.getAttribute("order"); %>
-        <ul>
-            <% for (Map.Entry<Livro, Integer> entry : order.getItems().entrySet()) { %>
-                <li>
-                    <b><%= entry.getValue() %> x <%= entry.getKey().getPrice() %></b>
-                    <h3><%= entry.getKey().getTitle() %></h3>
-                    <i> by <%= entry.getKey().getAuthor()%></i>
-                </li>
-            <% } %>
-        </ul>
-        <p>
-            <b>Total: <%= request.getAttribute("total") %></b>
-        </p>
-        <form action="/?command=Checkout" method="POST">
-            <input type="submit" value="Donate :)">
-        </form>
-        
-        <%@ include file="partials/scripts.jsp" %>
-    </body>
+<head>
+    <title>Bookshelf: Checkout</title>
+    <%@ include file="partials/head.jsp" %>
+</head>
+<body>
+    
+	<header>
+		<%@ include file="partials/navbar.jsp"%>
+	</header>
+	<br>
+	<br>
+	<br>
+	<br>
+    
+	<main role="main">
+		<div class="container">
+		    <p class="text-center">Voce está comprando os seguintes livros:</p>
+
+			<div class="card" >
+				<div class="card-body">
+					<h4 class="card-title">Carrinho</h4>
+					<hr>
+					<% Order order = (Order) session.getAttribute("order"); %>
+					<% for (Map.Entry<Livro, Integer> entry : order.getItems().entrySet()) { %>
+						<p class="card-text">
+							<h3><%= entry.getKey().getTitle() %></h3>
+							<i> by <%= entry.getKey().getAuthor()%></i>
+							<br>
+							<b><%= entry.getValue() %> x <%= entry.getKey().getPrice() %></b>
+						</p>
+						<br>
+						<hr>
+						<br>
+					<% } %>
+				</div>
+				<div class="row">
+					<div class="col-md-2">
+						<b class="card-text">Total: <%= request.getAttribute("total") %></b>
+					</div>
+					<div class="col-md-1">
+						<form action="/?command=Checkout" method="POST">
+							<input type="submit" class="btn btn-success btn-sm" value="Comprar">
+						</form>
+					</div>
+					<div class="col-md-1">
+						<form action="/?command=Home" method="POST">
+							<input type="submit" class="btn btn-primary btn-sm" value="Voltar">
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	    
+	    
+	    
+	</main>
+    
+    <%@ include file="partials/scripts.jsp" %>
+</body>
 </html>
