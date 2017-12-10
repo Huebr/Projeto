@@ -79,13 +79,44 @@ public class LivroDAOImpl implements LivroDAO {
 	@Override
 	public void updateLivro(Livro l) {
 		// TODO Auto-generated method stub
-		
+		try {
+			Connection conn = ConfigUtils.getConnection();
+			 String query = " UPDATE livros SET title=?, author=?, price=? WHERE isbn=?";
+
+				      // create the mysql insert preparedstatement
+				      PreparedStatement preparedStmt = conn.prepareStatement(query);
+				      preparedStmt.setString (1, l.getTitle());
+				      preparedStmt.setString (2, l.getAuthor());
+				      preparedStmt.setDouble (3, l.getPrice());
+				      preparedStmt.setString(4, l.getIsbn());
+				      // execute the preparedstatement
+				      preparedStmt.execute();
+				      ConfigUtils.closeConnection(conn);
+			
+		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void removeLivro(Livro l) {
 		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub
+		try {
+			Connection conn = ConfigUtils.getConnection();
+			 String query = " DELETE FROM livros WHERE isbn=?";
+
+			 // create the mysql insert preparedstatement
+			 PreparedStatement preparedStmt = conn.prepareStatement(query);
+			 preparedStmt.setString (1, l.getIsbn());
+			 preparedStmt.execute();
+			 ConfigUtils.closeConnection(conn);
+			
+		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
