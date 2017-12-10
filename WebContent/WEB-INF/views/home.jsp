@@ -24,8 +24,10 @@
 			<% if (request.getParameter("message") != null) { %>
 			
 			<h2><%= request.getParameter("message") %></h2>
+			<hr>
 			<% } else { %>
 			<h2>Welcome to the Bookshelf!</h2>
+			<hr>
 			<% } %>
 			<% for (Livro book : (List<Livro>) request.getAttribute("books")) { %>
 			
@@ -49,12 +51,12 @@
 		</div>
 	</main>
 
-	<%@ include file="partials/scripts.jsp"%>
 
 	<!-- FOOTER -->
 	<footer class="container">
-	<%@ include file="partials/footer.jsp"%>
 	<%@ include file="partials/visitor-counter.jsp"%>
+	<%@ include file="partials/footer.jsp"%>
+	<%@ include file="partials/scripts.jsp"%>
 	</footer>
 </body>
 </html>

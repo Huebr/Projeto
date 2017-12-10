@@ -9,18 +9,19 @@
 		<form class="form-signin" action="/?command=Login" method="POST">
 	    <div class="container">
 	    	<div class="row">
-		    	<div class="col-md-2"></div>
-		    	<div class="col-md-2">
-					<h2 class="form-signin-heading">Entrar</h2>
-		    	</div>
-		    	<div class="col-md-3">
+		    	<div class="col-md-4"></div>
+		    	<div class="col-md-4">
+					<h2 class="form-signin-heading">Login: </h2>
 					<input type="text" name="username" placeholder="Nome">
+					<br>
+					<input type="password" name="" placeholder="Senha">
+					<br>
 					<input type="hidden" name="redirect" value="<%= (String) request.getAttribute("redirect") %>">
+					<br>
+					<input type="submit" value="Entrar" class="btn btn-secondary"> ou
+					<a href="#" value="" class="btn btn-secondary">Cadastre-se</a>
 		    	</div>
-		    	<div class="col-md-2">
-					<input type="submit" value="Entrar" class="btn btn-secondary">
-		    	</div>
-				<div class="col-md-2"></div>    	
+				<div class="col-md-4"></div>    	
 	    	</div>
 		</form>		
 
