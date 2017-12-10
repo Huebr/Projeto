@@ -21,7 +21,7 @@
 				<artifactId>heroku-maven-plugin</artifactId>
 				<version>2.0.2</version>
 				<configuration>
-					<appName>padroesproj</appName>
+					<appName>salty-island-64067</appName>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -45,6 +45,11 @@
 			<version>1.7.25</version>
 		</dependency>
 		<dependency>
+       		<groupId>org.slf4j</groupId>
+       		<artifactId>slf4j-simple</artifactId>
+       		<version>1.6.4</version>
+   		</dependency>
+		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-catalina</artifactId>
 			<version>9.0.1</version>
@@ -58,12 +63,6 @@
 			<groupId>com.heroku.sdk</groupId>
 			<artifactId>heroku-deploy</artifactId>
 			<version>2.0.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.25</version>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>

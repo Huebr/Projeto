@@ -14,7 +14,7 @@
 					<h2 class="form-signin-heading">Login: </h2>
 					<input type="text" name="username" placeholder="Nome">
 					<br>
-					<input type="password" name="" placeholder="Senha">
+					<input type="password" name="senha" placeholder="Senha">
 					<br>
 					<input type="hidden" name="redirect" value="<%= (String) request.getAttribute("redirect") %>">
 					<br>

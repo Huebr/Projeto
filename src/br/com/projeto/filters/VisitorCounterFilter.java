@@ -3,6 +3,9 @@ package br.com.projeto.filters;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import br.com.projeto.models.User;
+
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Optional;
@@ -22,7 +25,7 @@ public class VisitorCounterFilter implements Filter {
       FilterChain chain
     ) throws IOException, ServletException {
         HttpSession session = ((HttpServletRequest) request).getSession(false);
-        Optional.ofNullable(session.getAttribute("username"))
+        Optional.ofNullable(((User)session.getAttribute("user")).getUsername())
           .map(Object::toString)
           .ifPresent(users::add);
         request.setAttribute("counter", users.size());
