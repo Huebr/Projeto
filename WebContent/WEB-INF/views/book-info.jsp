@@ -28,9 +28,8 @@
 						<p>Autor: <%= book.getAuthor() %></p>
 						<br>
 						<form action="/?command=Order" method="POST">
-							<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-							condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-							<p class="lead">Foto do livro</p>
+							<p class="lead"> <img src="<%=book.getImgUrl() %>" class="img-responsive" alt="Imagem Livro"> </a></p>
+							<p class="lead"><%=book.getResumo() %></p>
 							<div class="row">
 								<div class="col-md-2">
 									<label >Quantidade: </label>
@@ -40,7 +39,7 @@
 								</div>
 								<div class="col-md-3">
 									<input type="hidden" name="isbn" value="<%= book.getIsbn() %>">
-									<input type="submit" class="btn btn-success btn-sm" value="Adicionar no carrinho: <%= book.getPrice() %>$">
+									<input type="submit" class="btn btn-success btn-sm" value="Adicionar no carrinho: R$ <%= book.getPrice() %>">
 								</div>
 								<div class="col-md-2">
 									<a href="/?command=Home" class="btn btn-primary btn-sm">Voltar</a>

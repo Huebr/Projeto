@@ -1,7 +1,8 @@
 package br.com.projeto.models;
 
 import br.com.projeto.dao.UserDAO;
-import br.com.projeto.dao.UserDAOImpl;
+import br.com.projeto.dao.factory.DAOFactory;
+import br.com.projeto.dao.factory.HerokuDAOFactory;
 
 public class UserImpl implements User {
 	private String username;
@@ -9,7 +10,8 @@ public class UserImpl implements User {
 	private String password;
 	
 	public boolean authenticate(String username ,String pass) {
-		UserDAO udao= new UserDAOImpl();
+		DAOFactory appDAOFactory= new HerokuDAOFactory();
+    	UserDAO udao = appDAOFactory.getUserDAO();
 		User us = udao.authenticate(username, pass);
 		if(us.getUsername().equals("unknow")) {
 			return false;

@@ -1,4 +1,4 @@
-package br.com.projeto.dao;
+package br.com.projeto.dao.factory.herokuapp;
 
 import java.net.URISyntaxException;
 import java.sql.Connection;
@@ -6,20 +6,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import br.com.projeto.dao.UserDAO;
 import br.com.projeto.models.User;
 import br.com.projeto.models.UserImpl;
 
-public class UserDAOImpl implements UserDAO {
+public class HerokuUserDAOImpl implements UserDAO {
 
 	
-	public UserDAOImpl() {
+	public HerokuUserDAOImpl() {
 		String query ="CREATE TABLE IF NOT EXISTS users(id_user SERIAL PRIMARY KEY, username varchar(30) NOT NULL UNIQUE,password varchar(30) NOT NULL )";
 		Connection conn;
 		try {
-			conn = ConfigUtils.getConnection();
+			conn = HerokuConfigUtils.getConnection();
 			Statement stmt = conn.createStatement();
 			stmt.executeUpdate(query);
-			ConfigUtils.closeConnection(conn);
+			HerokuConfigUtils.closeConnection(conn);
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -30,7 +32,7 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		 User us = new UserImpl();
 		try {
-			Connection conn = ConfigUtils.getConnection();
+			Connection conn = HerokuConfigUtils.getConnection();
 			 String query = " SELECT * FROM users WHERE username=? AND password=?";
 
 				      // create the mysql insert preparedstatement
@@ -45,7 +47,7 @@ public class UserDAOImpl implements UserDAO {
 				    	  us.setPassword(rs.getString("password"));
 				      }
 				      else us.setUsername("unknow");
-				      ConfigUtils.closeConnection(conn);
+				      HerokuConfigUtils.closeConnection(conn);
 			
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -58,7 +60,7 @@ public class UserDAOImpl implements UserDAO {
 	public void createUser(User us) {
 		// TODO Auto-generated method stub
 		try {
-			Connection conn = ConfigUtils.getConnection();
+			Connection conn = HerokuConfigUtils.getConnection();
 			 String query = " insert into users (username,password)"
 				        + " values (?, ?)";
 
@@ -68,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
 				      preparedStmt.setString (2, us.getPassword());
 				      // execute the preparedstatement
 				      preparedStmt.execute();
-				      ConfigUtils.closeConnection(conn);
+				      HerokuConfigUtils.closeConnection(conn);
 			
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -80,7 +82,7 @@ public class UserDAOImpl implements UserDAO {
 	public void updateUser(User us) {
 		// TODO Auto-generated method stub
 		try {
-			Connection conn = ConfigUtils.getConnection();
+			Connection conn = HerokuConfigUtils.getConnection();
 			 String query = " UPDATE users SET username=?, password=? WHERE id_user=?";
 
 				      // create the mysql insert preparedstatement
@@ -90,7 +92,7 @@ public class UserDAOImpl implements UserDAO {
 				      preparedStmt.setInt (3, us.getId_user());
 				      // execute the preparedstatement
 				      preparedStmt.execute();
-				      ConfigUtils.closeConnection(conn);
+				      HerokuConfigUtils.closeConnection(conn);
 			
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -104,7 +106,7 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		 User us = new UserImpl();
 		try {
-			Connection conn = ConfigUtils.getConnection();
+			Connection conn = HerokuConfigUtils.getConnection();
 			 String query = " SELECT * FROM users WHERE id_user=?";
 
 				      // create the mysql insert preparedstatement
@@ -118,7 +120,7 @@ public class UserDAOImpl implements UserDAO {
 				    	  us.setPassword(rs.getString("password"));
 				      }
 				      else us.setUsername("unknow");
-				      ConfigUtils.closeConnection(conn);
+				      HerokuConfigUtils.closeConnection(conn);
 			
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -131,14 +133,14 @@ public class UserDAOImpl implements UserDAO {
 	public void deleteUser(User us) {
 		// TODO Auto-generated method stub
 		try {
-			Connection conn = ConfigUtils.getConnection();
+			Connection conn = HerokuConfigUtils.getConnection();
 			 String query = " DELETE FROM users WHERE id_user=?";
 
 			 // create the mysql insert preparedstatement
 			 PreparedStatement preparedStmt = conn.prepareStatement(query);
 			 preparedStmt.setInt (1, us.getId_user());
 			 preparedStmt.execute();
-			 ConfigUtils.closeConnection(conn);
+			 HerokuConfigUtils.closeConnection(conn);
 			
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
