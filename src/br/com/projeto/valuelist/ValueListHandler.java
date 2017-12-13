@@ -40,7 +40,7 @@ public class ValueListHandler implements ValueListIterator {
 	      int currIndex = listIterator.nextIndex();
 	      obj = list.get(currIndex);
 	    }
-	    return null;
+	    return obj;
 	}
 
 	@Override

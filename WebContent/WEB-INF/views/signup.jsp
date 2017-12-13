@@ -10,8 +10,7 @@
 	    <div class="container">
 	    	<% if (request.getParameter("message") != null) { %>
 			
-			<h2><%= request.getParameter("message") %></h2>
-			<hr>
+			<div class="alert alert-warning" role="alert"><%= request.getParameter("message") %></div>
 			<% } %>
 	    	<div class="row">
 		    	<div class="col-md-4"></div>

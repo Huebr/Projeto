@@ -19,7 +19,6 @@
     <main role="main">
 		<div class="container">
 	    <%@ include file="partials/shopping-cart-hint.jsp"%>
-	    	<div class="row">
 		    
 			    <% for (Livro book : (List<Livro>) request.getAttribute("books")) { %>
 			    
@@ -48,7 +47,6 @@
 						</form>
 					</div>
 				<% } %>
-		    </div>
         	<%@ include file="partials/visitor-counter.jsp"%>
 		    <%@ include file="partials/footer.jsp"%>
 	    </div>

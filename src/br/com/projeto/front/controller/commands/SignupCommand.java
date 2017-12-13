@@ -25,7 +25,7 @@ public class SignupCommand extends FrontCommand {
 			if(newUser.createUser()) {
 				response.sendRedirect(request.getParameter("redirect"));
 			}else {
-				 response.sendRedirect("/?command=Singup&message=cadastro inválido.");
+				 response.sendRedirect("/?command=Signup&message=username or password already exits.");
 			}
 		}else {
 			request.setAttribute("redirect", request.getRequestURL().append("?").append("command=Login").toString());
