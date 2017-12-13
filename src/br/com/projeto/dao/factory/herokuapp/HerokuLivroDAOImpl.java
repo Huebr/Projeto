@@ -15,12 +15,14 @@ import br.com.projeto.models.LivroImpl;
 
 public class HerokuLivroDAOImpl implements LivroDAO {
 	public HerokuLivroDAOImpl() {
-		String query ="CREATE TABLE IF NOT EXISTS livros( isbn varchar(14) PRIMARY KEY, title text NOT NULL,author varchar(50) NOT NULL, price numeric NOT NULL CHECK (price > 0),resumo text NOT NULL, imgUrl varchar(256) NOT NULL )";
+		String query1="DELETE TABLE IF EXISTS livros";
+		String query2 ="CREATE TABLE IF NOT EXISTS livros( isbn varchar(14) PRIMARY KEY, title text NOT NULL,author varchar(50) NOT NULL, price numeric NOT NULL CHECK (price > 0),resumo text NOT NULL, imgUrl varchar(256) NOT NULL )";
 		Connection conn;
 		try {
 			conn = HerokuConfigUtils.getConnection();
 			Statement stmt = conn.createStatement();
-			stmt.executeUpdate(query);
+			stmt.executeUpdate(query1);
+			stmt.executeUpdate(query2);
 			HerokuConfigUtils.closeConnection(conn);
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
