@@ -26,11 +26,10 @@ public class UserImpl implements User {
 	}
 	
 	@Override
-	public void createUser() {
+	public boolean createUser() {
 		DAOFactory appDAOFactory= new HerokuDAOFactory();
 		UserDAO udao= appDAOFactory.getUserDAO();
-		udao.createUser(this);
-		
+		return udao.createUser(this);
 	}
 	
 	

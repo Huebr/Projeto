@@ -8,5 +8,5 @@ public interface User {
 	int getId_user();
 	void setId_user(int id);
 	boolean authenticate(String username ,String pass);
-	void createUser();
+	boolean createUser();
 }

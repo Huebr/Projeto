@@ -58,7 +58,7 @@ public class HerokuUserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void createUser(User us) {
+	public boolean createUser(User us) {
 		// TODO Auto-generated method stub
 		try {
 			Connection conn = HerokuConfigUtils.getConnection();
@@ -72,10 +72,11 @@ public class HerokuUserDAOImpl implements UserDAO {
 				      // execute the preparedstatement
 				      preparedStmt.execute();
 				      HerokuConfigUtils.closeConnection(conn);
+				      return true;
 			
 		} catch (URISyntaxException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return false;
 		}
 	}
 

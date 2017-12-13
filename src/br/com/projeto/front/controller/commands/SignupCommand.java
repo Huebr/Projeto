@@ -22,14 +22,14 @@ public class SignupCommand extends FrontCommand {
 			newUser.setUsername(user);
 			newUser.setPassword(senha);
 			
-			newUser.createUser();
-			
-			//AINDA N FUNCIONA =(
+			if(newUser.createUser()) {
+				response.sendRedirect(request.getParameter("redirect"));
+			}else {
+				 response.sendRedirect("/?command=Singup&message=cadastro inválido.");
+			}
+		}else {
 			request.setAttribute("redirect", request.getRequestURL().append("?").append("command=Login").toString());
-			response.sendRedirect(request.getParameter("redirect"));
-		} else {
-			
 			forward("signup");
-        }
+		}
     }
 }
