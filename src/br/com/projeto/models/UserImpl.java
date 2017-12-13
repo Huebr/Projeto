@@ -1,8 +1,10 @@
+
 package br.com.projeto.models;
 
 import br.com.projeto.dao.UserDAO;
 import br.com.projeto.dao.factory.DAOFactory;
 import br.com.projeto.dao.factory.HerokuDAOFactory;
+import br.com.projeto.dao.factory.herokuapp.HerokuUserDAOImpl;
 
 public class UserImpl implements User {
 	private String username;
@@ -21,6 +23,14 @@ public class UserImpl implements User {
 			setId_user(us.getId_user());
 			return true;
 		}
+	}
+	
+	@Override
+	public void createUser() {
+		DAOFactory appDAOFactory= new HerokuDAOFactory();
+		UserDAO udao= appDAOFactory.getUserDAO();
+		udao.createUser(this);
+		
 	}
 	
 	
@@ -43,5 +53,7 @@ public class UserImpl implements User {
 	public void setId_user(int id) {
 		this.id_user=id;
 	}
+
 	
 }
+
