@@ -3,7 +3,7 @@
 ARQUIVOS MODIFICADOS
 
 -- modificações de linkagem de acesso
-'''
+'''cmd
 Projeto/WebContent/WEB-INF/views/login.jsp
 Projeto/WebContent/WEB-INF/views/signup.jsp
 '''
