@@ -27,7 +27,7 @@ public class AuthenticationFilter implements Filter {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 		HttpSession session = httpServletRequest.getSession(false);
-		if (session == null || session.getAttribute("username") == null) {
+		if (session == null || session.getAttribute("user") == null) {
 			callback.intercept();
 			FrontCommand command = new HomeCommand();
 			command.init(httpServletRequest, httpServletResponse);

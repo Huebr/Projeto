@@ -12,7 +12,7 @@ public class LogoutCommand extends FrontCommand {
         super.process();
         Optional.ofNullable(request.getSession(false))
           .ifPresent(session -> {
-              session.removeAttribute("username");
+              session.removeAttribute("user");
               session.removeAttribute("order");
           });
         response.sendRedirect("/?command=Home");

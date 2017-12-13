@@ -15,6 +15,10 @@ public interface Livro {
     void setTitle(String title);
 
     Double getPrice();
-
+    String getResumo();
+    void setResumo(String resumo);
+    void setImgUrl(String url);
+    String getImgUrl();
+    
     void setPrice(Double price);
 }

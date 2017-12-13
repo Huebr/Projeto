@@ -8,6 +8,7 @@ import br.com.projeto.models.EstanteDeLivros;
 import br.com.projeto.models.Livro;
 import br.com.projeto.models.Order;
 import br.com.projeto.models.OrderImpl;
+import br.com.projeto.models.User;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -21,7 +22,7 @@ public class OrderCommand extends FrontCommand {
             Order order = Optional
               .ofNullable(session.getAttribute("order"))
               .map(Order.class::cast)
-              .orElseGet(() -> new OrderImpl((String) session.getAttribute("username")));
+              .orElseGet(() -> new OrderImpl(((User)session.getAttribute("user")).getUsername()));
             EstanteDeLivros bookshelf = (EstanteDeLivros) request.getServletContext()
               .getAttribute("bookshelf");
             String isbn = request.getParameter("isbn");
