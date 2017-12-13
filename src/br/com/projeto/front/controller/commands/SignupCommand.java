@@ -24,6 +24,7 @@ public class SignupCommand extends FrontCommand {
 			
 			newUser.createUser();
 			
+			//AINDA N FUNCIONA =(
 			request.setAttribute("redirect", request.getRequestURL().append("?").append("command=Login").toString());
 			response.sendRedirect(request.getParameter("redirect"));
 		} else {
