@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bookshelf: Login</title>
+        <title>Venda de livros: Login</title>
         <%@ include file="partials/head.jsp" %>
     </head>
     <body>
@@ -14,7 +14,7 @@
 			<% } %>
 	    	<div class="row">
 		    	<div class="col-md-4"></div>
-		    	<div class="col-md-4">
+		    	<div class="col-md-4">div
 					<h2 class="form-signin-heading">Crie sua conta:</h2>
 					<input type="text" name="username" placeholder="Nome">
 					<br>
@@ -27,6 +27,7 @@
 		    	</div>
 				<div class="col-md-4"></div>    	
 	    	</div>
+    	</div>
 		</form>		
 
 
@@ -34,7 +35,6 @@
     	
         <%@ include file="partials/visitor-counter.jsp" %>
         <%@ include file="partials/scripts.jsp" %>
-    </div> <!-- /container -->
     	
     </body>
 </html>

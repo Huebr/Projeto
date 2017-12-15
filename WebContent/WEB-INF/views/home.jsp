@@ -3,7 +3,7 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>Bookshelf: Home</title>
+<title>Venda de livros: Home</title>
 <%@ include file="partials/head.jsp"%>
 </head>
 <body>
@@ -26,23 +26,22 @@
 			<h2><%= request.getParameter("message") %></h2>
 			<hr>
 			<% } else { %>
-			<h2>Welcome to the Bookshelf!</h2>
+			<h2>Bem-vindo a "Venda de Livros"!</h2>
 			<hr>
 			<% } %>
 			<% for (Livro book : (List<Livro>) request.getAttribute("books")) { %>
 			
-				<div class="col-md-3"></div>
-				<div class="card col-md-6">
-					<div class="card-body">
-						<p class="card-title">
-							<b><%=book.getAuthor()%>:</b>
-						</p>
+				<div class="col-md-2"></div>
+				<div class="card col-md-8">
+					<div class="card-body col-md-12">
+						<p class="card-title"> <b><%=book.getAuthor()%>:</b> </p>
+						
 						<hr />
+						
 						<h3 class="card-subtitle mb-2 text-muted"><%=book.getTitle()%></h3>
 						<a href="?command=Show&isbn=<%=book.getIsbn()%>">More...</a>
 					</div>
 				</div>
-				<div class="col-md-3"></div>
 		
 				<br>
 				

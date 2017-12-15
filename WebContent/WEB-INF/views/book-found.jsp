@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bookshelf: Titulo encontrado</title>
+        <title>Venda de livros: Titulo encontrado</title>
         <%@ include file="partials/head.jsp" %>
     </head>
     <body>

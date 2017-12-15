@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bookshelf: Command unknown</title>
+        <title>Venda de livros: Comando desconhecido</title>
         <%@ include file="partials/head.jsp" %>
     </head>
     <body>
-        <p>Sorry, this command is not known!</p>
+        <p>Desculpe, comando não conhecido!</p>
         
         <%@ include file="partials/scripts.jsp" %>
     </body>

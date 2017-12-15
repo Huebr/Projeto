@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bookshelf: Login</title>
+        <title>Venda de livros: Login</title>
         <%@ include file="partials/head.jsp" %>
     </head>
     <body>

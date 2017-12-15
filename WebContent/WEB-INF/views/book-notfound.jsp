@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bookshelf: Title not found</title>
+        <title>Venda de livros: Título não encontrado</title>
         <%@ include file="partials/head.jsp" %>
     </head>
     <body>

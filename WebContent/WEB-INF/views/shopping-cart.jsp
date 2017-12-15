@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bookshelf: Checkout</title>
+    <title>Venda de livros: Checkout</title>
     <%@ include file="partials/head.jsp" %>
 </head>
 <body>
@@ -32,15 +32,17 @@
 							<i> by <%= entry.getKey().getAuthor()%></i>
 							<br>
 							<b><%= entry.getValue() %> x <%= entry.getKey().getPrice() %></b>
-						</p>
 						<br>
 						<hr>
 						<br>
 					<% } %>
 				</div>
-				<div class="row">
+				<div class="card-body">
+					<h5>TOTAL:</h5>
+				</div>
+				<div class="card-body row">
 					<div class="col-md-2">
-						<b class="card-text">Total: <%= request.getAttribute("total") %></b>
+						<b class="card-text">$: <%= request.getAttribute("total") %></b>
 					</div>
 					<div class="col-md-1">
 						<form action="/?command=Checkout" method="POST">

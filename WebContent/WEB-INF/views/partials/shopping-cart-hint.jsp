@@ -4,13 +4,13 @@
     <% if (order != null && order.getItems().size() > 0) { %>
         <hr/>
         <p>
-            Your shopping cart is holding
+            Seu carrinho de compras está guardando
             <% if (order.getItems().size() == 1) { %>
                 1 item.
             <% } else { %>
                 <%= (order.getItems().size()) %> items.
             <% } %>
-            <a href="/?command=Checkout">Checkout</a>
+            <a href="/?command=Checkout">Conferir</a>
         </p>
     <% } %>
 <% } %>
